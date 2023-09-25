@@ -45,3 +45,11 @@ pub fn gen_deck() -> Vec<Card> {
     deck.shuffle(&mut thread_rng());
     deck
 }
+
+pub fn display_hand(hand: &Vec<Card>) {
+    println!("\nYour hand:");
+    for card in hand {
+        print!("{:?} ", card);
+    }
+    println!("");
+}

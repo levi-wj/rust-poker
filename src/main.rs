@@ -1,7 +1,6 @@
-use std::io;
-
 pub mod cards;
 pub mod players;
+pub mod input;
 
 enum GamePhase {
     Start,
@@ -26,7 +25,6 @@ fn deal(deck: &mut Vec<cards::Card>, players: &mut Vec<players::Player>) {
     for player in players {
         player.hand = vec![deck.pop().unwrap(), deck.pop().unwrap()]
     }
-    println!("Deck len: {}", deck.len());
 }
 
 fn start_round(game: &mut Game) {
@@ -36,19 +34,9 @@ fn start_round(game: &mut Game) {
     game.phase = GamePhase::Start;
 }
 
-fn get_player_move() -> String {
-    let mut player_move = String::new();
-
-    println!("\nYour move! You can (r)aise, (c)all, or (f)old.");
-
-    io::stdin()
-        .read_line(&mut player_move)
-        .expect("Failed to read line");
-
-    player_move.truncate(1);
-
-    player_move
-}
+/*fn get_cur_player(game: &Game, players: &Vec<players::Player>) -> &players::Player {
+    &players[game.player_turn]
+}*/
 
 fn is_game_over() -> bool {
     false
@@ -73,8 +61,15 @@ fn main() {
         start_round(&mut game);
         deal(&mut deck, &mut players);
 
-        match get_player_move().as_str() {
-            "r" => println!("raising"),
+        cards::display_hand(&players[0].hand);
+
+        let mut action = input::get_user_str("\nYour move! You can (r)aise, (c)all, or (f)old.");
+        action.truncate(1);
+
+        match action.as_str() {
+            "r" => {
+                println!("raising");
+            },
             "c" => println!("calling"),
             _ => println!("Invalid input."),
         }

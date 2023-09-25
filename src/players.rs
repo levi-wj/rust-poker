@@ -7,6 +7,7 @@ pub struct Player {
     pub name: &'static str,
     pub chips: u32,
     pub hand: Vec<Card>,
+    pub cur_bet: u32,
 }
 
 pub fn setup_players(playercount: usize) -> Vec<Player> {
@@ -16,6 +17,7 @@ pub fn setup_players(playercount: usize) -> Vec<Player> {
             name: NAMES[i],
             chips: 100,
             hand: Vec::new(),
+            cur_bet: 0,
         });
     }
     players
