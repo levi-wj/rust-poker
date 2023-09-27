@@ -1,5 +1,9 @@
 use std::io;
 
+pub struct Test {
+    pub num: u32
+}
+
 pub fn get_user_str(prompt: &str) -> String {
     let mut player_move = String::new();
 

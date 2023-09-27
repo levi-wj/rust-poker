@@ -8,6 +8,7 @@ pub struct Player {
     pub chips: u32,
     pub hand: Vec<Card>,
     pub cur_bet: u32,
+    pub folded: bool,
 }
 
 pub fn setup_players(playercount: usize) -> Vec<Player> {
@@ -18,7 +19,14 @@ pub fn setup_players(playercount: usize) -> Vec<Player> {
             chips: 100,
             hand: Vec::new(),
             cur_bet: 0,
+            folded: false,
         });
     }
     players
+}
+
+pub fn deal(deck: &mut Vec<Card>, players: &mut Vec<Player>) {
+    for player in players {
+        player.hand = vec![deck.pop().unwrap(), deck.pop().unwrap()]
+    }
 }
