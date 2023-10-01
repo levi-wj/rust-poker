@@ -4,7 +4,7 @@ This is a command-line implementation of Texas Hold'em poker written in Rust. Yo
 
 This project allowed me to get familiar with rust for the first time.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video]([http://youtube.link.goes.here](https://youtu.be/u31OcCPWOdQ))
 
 # Development Environment
 
