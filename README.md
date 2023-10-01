@@ -4,7 +4,7 @@ This is a command-line implementation of Texas Hold'em poker written in Rust. Yo
 
 This project allowed me to get familiar with rust for the first time.
 
-[Software Demo Video]([http://youtube.link.goes.here](https://youtu.be/u31OcCPWOdQ))
+[Software Demo Video](https://youtu.be/u31OcCPWOdQ)
 
 # Development Environment
 
@@ -14,8 +14,8 @@ The 'strum' crate was used which provides iterator functionality for enum types 
 
 # Useful Websites
 
-- [The Book]([http://url.link.goes.here](https://doc.rust-lang.org/book/))
-- [Rust for the impatient (youtube)]([http://url.link.goes.here](https://www.youtube.com/watch?v=br3GIIQeefY))
+- [The Book](https://doc.rust-lang.org/book/)
+- [Rust for the impatient (youtube)](https://www.youtube.com/watch?v=br3GIIQeefY)
 
 # Future Work
 
