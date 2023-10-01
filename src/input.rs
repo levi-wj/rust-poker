@@ -1,9 +1,5 @@
 use std::io;
 
-pub struct Test {
-    pub num: u32
-}
-
 pub fn get_user_str(prompt: &str) -> String {
     let mut player_move = String::new();
 
@@ -16,7 +12,7 @@ pub fn get_user_str(prompt: &str) -> String {
     player_move
 }
 
-pub fn get_user_int(prompt: &str) -> u32 {
+pub fn get_user_int(prompt: &str) -> i32 {
     let mut guess = String::new();
 
     println!("{}", prompt);
@@ -24,7 +20,7 @@ pub fn get_user_int(prompt: &str) -> u32 {
     io::stdin()
         .read_line(&mut guess)
         .expect("Failed to read line");
-    let guess:u32 = match guess.trim().parse() {
+    let guess:i32 = match guess.trim().parse() {
         Ok(num) => num,
         Err(_) => 0,
     };
