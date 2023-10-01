@@ -44,7 +44,7 @@ pub fn do_bot_action(game: &mut Game, player: &mut Player){
     confidence += (get_high_card(&player.hand) * 4);
 
     if confidence > 120 {
-        do_action(game, player, Action::Raise, (rng.gen_range(1..confidence) / 4));
+        do_action(game, player, Action::Raise, (rng.gen_range(1..confidence) / 5));
     } else if confidence > 50 {
         do_action(game, player, Action::Call, 0);
     } else {

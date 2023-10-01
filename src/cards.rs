@@ -163,6 +163,7 @@ pub fn display_hand(hand: &Vec<Card>) {
 }
 
 pub fn display_table(table: &Vec<Card>) {
+    println!("table len: {}", table.len());
     if table.len() > 0 {
         println!("\nCards on the table:");
         display_cards(table);

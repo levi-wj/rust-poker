@@ -7,6 +7,9 @@ mod players;
 mod input;
 
 fn do_round(cards_to_flip: usize, game: &mut game::Game, deck: &mut Vec<cards::Card>, players: &mut Vec<players::Player>) {
+    if cards_to_flip > 0 {
+        game.table.append(&mut cards::flip_cards(cards_to_flip, deck));
+    }
     cards::display_table(&game.table);
     cards::display_hand(&players[0].hand);
     for player in players {
